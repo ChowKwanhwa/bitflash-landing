@@ -39,7 +39,7 @@ export const unisatWallet = (): Wallet => ({
             id: 'unisat',
             name: 'Unisat',
             type: 'injected',
-            connect: async () => {
+            connect: async (parameters) => {
                 const unisat = (window as any).unisat;
                 if (!unisat) {
                     window.open('https://unisat.io/download', '_blank');
