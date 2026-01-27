@@ -50,7 +50,7 @@ export function Header() {
                 </nav>
 
                 {/* Actions: Language & Wallet */}
-                <div className="hidden md:flex items-center space-x-4">
+                <div className="flex items-center gap-4">
                     <button
                         onClick={toggleLanguage}
                         className="p-2 rounded-full hover:bg-white/10 text-gray-300 hover:text-primary transition-colors"
@@ -58,11 +58,67 @@ export function Header() {
                     >
                         <Globe className="w-5 h-5" />
                     </button>
-                    <ConnectButton
-                        accountStatus="address"
-                        chainStatus="icon"
-                        showBalance={false}
-                    />
+                    <ConnectButton.Custom>
+                        {({
+                            account,
+                            chain,
+                            openAccountModal,
+                            openChainModal,
+                            openConnectModal,
+                            authenticationStatus,
+                            mounted,
+                        }) => {
+                            const ready = mounted && authenticationStatus !== 'loading';
+                            const connected =
+                                ready &&
+                                account &&
+                                chain &&
+                                (!authenticationStatus ||
+                                    authenticationStatus === 'authenticated');
+
+                            return (
+                                <div
+                                    {...(!ready && {
+                                        'aria-hidden': true,
+                                        'style': {
+                                            opacity: 0,
+                                            pointerEvents: 'none',
+                                            userSelect: 'none',
+                                        },
+                                    })}
+                                >
+                                    {(() => {
+                                        if (!connected) {
+                                            return (
+                                                <button onClick={openConnectModal} className="bg-white text-black px-4 py-2 rounded-full font-bold hover:bg-primary transition-colors">
+                                                    Connect Wallet
+                                                </button>
+                                            );
+                                        }
+
+                                        if (chain.unsupported || chain.id !== 100000001) {
+                                            return (
+                                                <button onClick={openChainModal} className="bg-red-500 text-white px-4 py-2 rounded-full font-bold hover:bg-red-600 transition-colors animate-pulse">
+                                                    Switch to Bitcoin Network
+                                                </button>
+                                            );
+                                        }
+
+                                        // Mock Bitcoin address for display if strictly requiring a "BTC address" look for the demo
+                                        // In a real app we'd fetch this from the wallet provider
+                                        const btcAddress = `bc1q${account.address.slice(2, 6)}...${account.address.slice(-4)}`;
+
+                                        return (
+                                            <button onClick={openAccountModal} className="flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full font-bold hover:bg-white/20 transition-colors border border-primary/50">
+                                                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                                {btcAddress}
+                                            </button>
+                                        );
+                                    })()}
+                                </div>
+                            );
+                        }}
+                    </ConnectButton.Custom>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -96,7 +152,66 @@ export function Header() {
                         </Link>
                     ))}
                     <div className="flex justify-center pt-4">
-                        <ConnectButton />
+                        <ConnectButton.Custom>
+                            {({
+                                account,
+                                chain,
+                                openAccountModal,
+                                openChainModal,
+                                openConnectModal,
+                                authenticationStatus,
+                                mounted,
+                            }) => {
+                                const ready = mounted && authenticationStatus !== 'loading';
+                                const connected =
+                                    ready &&
+                                    account &&
+                                    chain &&
+                                    (!authenticationStatus ||
+                                        authenticationStatus === 'authenticated');
+
+                                return (
+                                    <div
+                                        {...(!ready && {
+                                            'aria-hidden': true,
+                                            'style': {
+                                                opacity: 0,
+                                                pointerEvents: 'none',
+                                                userSelect: 'none',
+                                            },
+                                        })}
+                                        className="w-full"
+                                    >
+                                        {(() => {
+                                            if (!connected) {
+                                                return (
+                                                    <button onClick={openConnectModal} className="w-full bg-white text-black px-4 py-2 rounded-full font-bold hover:bg-primary transition-colors text-lg">
+                                                        Connect Wallet
+                                                    </button>
+                                                );
+                                            }
+
+                                            if (chain.unsupported || chain.id !== 100000001) {
+                                                return (
+                                                    <button onClick={openChainModal} className="w-full bg-red-500 text-white px-4 py-2 rounded-full font-bold hover:bg-red-600 transition-colors animate-pulse">
+                                                        Switch to Bitcoin Network
+                                                    </button>
+                                                );
+                                            }
+
+                                            const btcAddress = `bc1q${account.address.slice(2, 6)}...${account.address.slice(-4)}`;
+
+                                            return (
+                                                <button onClick={openAccountModal} className="w-full flex items-center justify-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full font-bold hover:bg-white/20 transition-colors border border-primary/50 text-lg">
+                                                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                                    {btcAddress}
+                                                </button>
+                                            );
+                                        })()}
+                                    </div>
+                                );
+                            }}
+                        </ConnectButton.Custom>
                     </div>
                 </div>
             )}
