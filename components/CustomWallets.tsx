@@ -34,8 +34,34 @@ export const unisatWallet = (): Wallet => ({
     },
     createConnector: (walletDetails) => {
         return createConnector((config) => ({
-            ...injected({ target: 'metaMask' })(config),
+            ...injected()(config),
             ...walletDetails,
+            id: 'unisat',
+            name: 'Unisat',
+            type: 'injected',
+            connect: async () => {
+                const unisat = (window as any).unisat;
+                if (!unisat) {
+                    window.open('https://unisat.io/download', '_blank');
+                    throw new Error('Unisat wallet not found');
+                }
+                try {
+                    const accounts = await unisat.requestAccounts();
+                    const btcAddress = accounts[0];
+                    // Mock an EVM address for Wagmi internal state compatibility
+                    // In a real app we would use a dedicated Bitcoin adapter, but this allows the UI to proceed
+                    // Browser-safe string to hex
+                    const hex = btcAddress.split('').map((c: string) => c.charCodeAt(0).toString(16)).join('');
+                    const mockAddress = `0x${hex.padEnd(40, '0').slice(0, 40)}`;
+
+                    return {
+                        accounts: [mockAddress as `0x${string}`],
+                        chainId: 100000001, // Custom Bitcoin Chain ID
+                    };
+                } catch (e) {
+                    throw e;
+                }
+            },
         }));
     },
 });
