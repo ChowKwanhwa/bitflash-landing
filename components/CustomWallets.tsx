@@ -78,8 +78,36 @@ export const bitPocketWallet = (): Wallet => ({
     },
     createConnector: (walletDetails) => {
         return createConnector((config) => ({
-            ...injected({ target: 'metaMask' })(config),
+            ...injected()(config),
             ...walletDetails,
+            id: 'bitpocket',
+            name: 'BitPocket',
+            type: 'injected',
+            connect: async (parameters) => {
+                // Try to find BitPocket provider, often injected as window.bitpocket or piggybacking on window.bitcoin
+                const bitpocket = (window as any).bitpocket || (window as any).bitcoin?.bitpocket;
+
+                if (!bitpocket) {
+                    window.open('https://chromewebstore.google.com/detail/bitpocket/bcangfodoelomcmghogkjaoobgnhbbge', '_blank');
+                    throw new Error('BitPocket wallet not found');
+                }
+                try {
+                    // Assuming BitPocket follows a similar API to Unisat/WebLN
+                    const accounts = await bitpocket.requestAccounts();
+                    const btcAddress = accounts[0];
+
+                    // Mock an EVM address for Wagmi internal state compatibility
+                    const hex = btcAddress.split('').map((c: string) => c.charCodeAt(0).toString(16)).join('');
+                    const mockAddress = `0x${hex.padEnd(40, '0').slice(0, 40)}`;
+
+                    return {
+                        accounts: [mockAddress as `0x${string}`] as const,
+                        chainId: 100000001, // Custom Bitcoin Chain ID
+                    } as any;
+                } catch (e) {
+                    throw e;
+                }
+            },
         }));
     },
 });
