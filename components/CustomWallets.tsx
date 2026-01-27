@@ -86,28 +86,36 @@ export const bitPocketWallet = (): Wallet => ({
             connect: async (parameters) => {
                 console.log("[BitPocket] Attempting connection...");
                 // Try to find BitPocket provider, often injected as window.bitpocket or piggybacking on window.bitcoin
-                const bitpocket = (window as any).bitpocket || (window as any).bitcoin?.bitpocket;
+                let provider = (window as any).bitpocket || (window as any).bitcoin?.bitpocket;
 
-                if (!bitpocket) {
+                if (!provider) {
                     console.error("[BitPocket] Provider not found on window object");
                     window.open('https://chromewebstore.google.com/detail/bitpocket/bcangfodoelomcmghogkjaoobgnhbbge', '_blank');
                     throw new Error('BitPocket wallet not found');
                 }
 
                 try {
-                    console.log("[BitPocket] Provider found:", bitpocket);
+                    console.log("[BitPocket] Provider found:", provider);
+
+                    // Handle potential nested structure seen in logs: { unisat: ... }
+                    if (!provider.requestAccounts && provider.unisat) {
+                        console.log("[BitPocket] Detected nested 'unisat' property, using it as provider...");
+                        provider = provider.unisat;
+                    }
+
                     let accounts;
 
                     // Try requestAccounts first (modern standard)
-                    if (typeof bitpocket.requestAccounts === 'function') {
+                    if (typeof provider.requestAccounts === 'function') {
                         console.log("[BitPocket] Calling requestAccounts()...");
-                        accounts = await bitpocket.requestAccounts();
+                        accounts = await provider.requestAccounts();
                     }
                     // Fallback to enable() (older standard)
-                    else if (typeof bitpocket.enable === 'function') {
+                    else if (typeof provider.enable === 'function') {
                         console.log("[BitPocket] Calling enable()...");
-                        accounts = await bitpocket.enable();
+                        accounts = await provider.enable();
                     } else {
+                        console.error("[BitPocket] Provider object keys:", Object.keys(provider));
                         throw new Error("BitPocket compatibility: No connect method found (requestAccounts/enable)");
                     }
 
