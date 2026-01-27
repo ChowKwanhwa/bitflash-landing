@@ -43,10 +43,10 @@ export const unisatWallet = (): Wallet => ({
 export const bitPocketWallet = (): Wallet => ({
     id: 'bitpocket',
     name: 'BitPocket',
-    iconUrl: 'https://tokenpocket.pro/favicon.ico',
-    iconBackground: '#2980b9',
+    iconUrl: '/bitpocket.png',
+    iconBackground: '#000000', // Changed to match the likely dark aesthetic or logo background
     downloadUrls: {
-        chrome: 'https://www.bitpocket.im/',
+        chrome: 'https://chromewebstore.google.com/detail/bitpocket/bcangfodoelomcmghogkjaoobgnhbbge',
         android: 'https://www.bitpocket.im/',
         ios: 'https://www.bitpocket.im/',
     },
