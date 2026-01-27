@@ -55,7 +55,7 @@ export const unisatWallet = (): Wallet => ({
                     const mockAddress = `0x${hex.padEnd(40, '0').slice(0, 40)}`;
 
                     return {
-                        accounts: [mockAddress as `0x${string}`],
+                        accounts: [mockAddress as `0x${string}`] as const,
                         chainId: 100000001, // Custom Bitcoin Chain ID
                     };
                 } catch (e) {
