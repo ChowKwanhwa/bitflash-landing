@@ -27,6 +27,14 @@ const bitcoinChain = defineChain({
 });
 
 import { unisatWallet, bitPocketWallet } from "./CustomWallets";
+import {
+    metaMaskWallet,
+    rainbowWallet,
+    walletConnectWallet,
+    okxWallet,
+    tokenPocketWallet,
+    coinbaseWallet,
+} from '@rainbow-me/rainbowkit/wallets';
 
 const config = getDefaultConfig({
     appName: "BitFlash Landing Page",
@@ -36,7 +44,16 @@ const config = getDefaultConfig({
     wallets: [
         {
             groupName: 'Recommended',
-            wallets: [unisatWallet, bitPocketWallet],
+            wallets: [
+                unisatWallet,
+                bitPocketWallet,
+                metaMaskWallet,
+                okxWallet,
+                tokenPocketWallet,
+                rainbowWallet,
+                walletConnectWallet,
+                coinbaseWallet
+            ],
         },
     ],
 });
