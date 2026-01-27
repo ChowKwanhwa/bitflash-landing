@@ -35,11 +35,7 @@ export const unisatWallet = (): Wallet => ({
     createConnector: (walletDetails) => {
         // Since Unisat is not an EVM wallet, this is a mock connector to allow it to appear in the UI.
         // In a real app, you would use a dedicated Bitcoin adapter or wrapper.
-        const connector = createdMockConnector(walletDetails);
-        return {
-            connector,
-            ...walletDetails,
-        };
+        return createdMockConnector(walletDetails);
     },
 });
 
@@ -54,11 +50,7 @@ export const bitPocketWallet = (): Wallet => ({
         ios: 'https://www.bitpocket.im/',
     },
     createConnector: (walletDetails) => {
-        const connector = createdMockConnector(walletDetails);
-        return {
-            connector,
-            ...walletDetails,
-        };
+        return createdMockConnector(walletDetails);
     },
 });
 
