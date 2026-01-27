@@ -84,27 +84,48 @@ export const bitPocketWallet = (): Wallet => ({
             name: 'BitPocket',
             type: 'injected',
             connect: async (parameters) => {
+                console.log("[BitPocket] Attempting connection...");
                 // Try to find BitPocket provider, often injected as window.bitpocket or piggybacking on window.bitcoin
                 const bitpocket = (window as any).bitpocket || (window as any).bitcoin?.bitpocket;
 
                 if (!bitpocket) {
+                    console.error("[BitPocket] Provider not found on window object");
                     window.open('https://chromewebstore.google.com/detail/bitpocket/bcangfodoelomcmghogkjaoobgnhbbge', '_blank');
                     throw new Error('BitPocket wallet not found');
                 }
-                try {
-                    // Assuming BitPocket follows a similar API to Unisat/WebLN
-                    const accounts = await bitpocket.requestAccounts();
-                    const btcAddress = accounts[0];
 
-                    // Mock an EVM address for Wagmi internal state compatibility
+                try {
+                    console.log("[BitPocket] Provider found:", bitpocket);
+                    let accounts;
+
+                    // Try requestAccounts first (modern standard)
+                    if (typeof bitpocket.requestAccounts === 'function') {
+                        console.log("[BitPocket] Calling requestAccounts()...");
+                        accounts = await bitpocket.requestAccounts();
+                    }
+                    // Fallback to enable() (older standard)
+                    else if (typeof bitpocket.enable === 'function') {
+                        console.log("[BitPocket] Calling enable()...");
+                        accounts = await bitpocket.enable();
+                    } else {
+                        throw new Error("BitPocket compatibility: No connect method found (requestAccounts/enable)");
+                    }
+
+                    console.log("[BitPocket] Accounts received:", accounts);
+                    const btcAddress = Array.isArray(accounts) ? accounts[0] : accounts; // Handle potential different return types
+
+                    if (!btcAddress) throw new Error("No accounts returned");
+
+                    // Mock EVM address
                     const hex = btcAddress.split('').map((c: string) => c.charCodeAt(0).toString(16)).join('');
                     const mockAddress = `0x${hex.padEnd(40, '0').slice(0, 40)}`;
 
                     return {
                         accounts: [mockAddress as `0x${string}`] as const,
-                        chainId: 100000001, // Custom Bitcoin Chain ID
+                        chainId: 100000001,
                     } as any;
-                } catch (e) {
+                } catch (e: any) {
+                    console.error("[BitPocket] Connection error:", e);
                     throw e;
                 }
             },
