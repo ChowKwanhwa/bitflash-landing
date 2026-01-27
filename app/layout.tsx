@@ -8,8 +8,11 @@ import { Footer } from '../components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'BitFlash | Reinventing Prediction Markets on Bitcoin Layer 2',
-  description: 'Instant Finality, Micro-Betting, Anti-MEV. Join the revolution.',
+  title: "BitFlash | Lightning Prediction Market",
+  description: "The First Gamified Prediction Market on Bitcoin Lightning Network. Powered by BitBoom.",
+  icons: {
+    icon: "/logo.jpg",
+  },
 };
 
 export default function RootLayout({

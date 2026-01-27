@@ -18,6 +18,28 @@ export const translations = {
             launch: "Launch App",
             ecosystem: "Ecosystem",
         },
+        vision: {
+            title: "Reinventing",
+            highlight: "Consensus",
+            description1: "BitFlash is not just a betting platform; it represents the evolution of truth. By leveraging the Bitcoin Lightning Network, we restore the original promise of decentralized consensus—fast, fair, and immutable.",
+            description2: "We are building a world where information markets are as liquid as water and as fast as light. No gatekeepers, no delays, just pure market efficiency."
+        },
+        ecosystem: {
+            title: "Join the",
+            subtitle: "A unified liquidity layer across multiple applications, powered by the BitBoom protocol.",
+            p1: { title: "BitFlash Predict", desc: "The core prediction market DApp. Trade on sports, crypto prices, and global events." },
+            p2: { title: "Flash SDK", desc: "Developer tools to integrate prediction markets into any game or social app." },
+            p3: { title: "Boom Nodes", desc: "Run a verification node to earn yield from market settlements." },
+            p4: { title: "Liquid Bridge", desc: "Seamless asset swapping between Bitcoin L1, Lightning, and RGB assets." },
+        },
+        technology: {
+            title: "Under the",
+            highlight: "Hood",
+            p1: { title: "Bitcoin Lightning Network", desc: "Built on top of Bitcoin's Layer 2 for millisecond-latency settlements and near-zero fees." },
+            p2: { title: "Discreet Log Contracts (DLCs)", desc: "Oracle-based smart contracts that execute directly on the Bitcoin blockchain without a third party." },
+            p3: { title: "Taproot Assets & RGB", desc: "Issuing stablecoins and tokens directly on Bitcoin, secured by Proof-of-Work." },
+            p4: { title: "Nostr Protocol Relay", desc: "Decentralized social transport layer for order books and reputation data." },
+        },
         features: {
             title: "Why",
             titleHighlight: "BitFlash?",
@@ -68,6 +90,28 @@ export const translations = {
             subtitleHighlight: "下一代预测市场",
             launch: "启动应用",
             ecosystem: "BitBoom 生态",
+        },
+        vision: {
+            title: "重塑",
+            highlight: "共识",
+            description1: "BitFlash 不仅仅是一个博彩平台；它是真理的进化。通过利用比特币闪电网络，我们恢复了去中心化共识的最初承诺——快速、公平且不可篡改。",
+            description2: "我们正在构建一个信息市场，它像水一样流动，像光一样快速。没有守门人，没有延迟，只有纯粹的市场效率。"
+        },
+        ecosystem: {
+            title: "加入",
+            subtitle: "由 BitBoom 协议驱动的跨应用统一流动性层。",
+            p1: { title: "BitFlash 预测", desc: "核心预测市场 DApp。交易体育赛事、加密货币价格和全球事件。" },
+            p2: { title: "Flash SDK", desc: "将预测市场集成到任何游戏或社交应用中的开发者工具。" },
+            p3: { title: "Boom 节点", desc: "运行验证节点并从市场结算中赚取收益。" },
+            p4: { title: "流动性桥", desc: "比特币 L1、闪电网络和 RGB 资产之间的无缝资产交换。" },
+        },
+        technology: {
+            title: "底层",
+            highlight: "技术",
+            p1: { title: "比特币闪电网络", desc: "建立在比特币二层之上，实现毫秒级结算和近乎零的费用。" },
+            p2: { title: "离散对数合约 (DLCs)", desc: "基于预言机的智能合约，直接在比特币区块链上执行，无需第三方。" },
+            p3: { title: "Taproot Assets & RGB", desc: "直接在比特币上发行稳定币和代币，由工作量证明 (PoW) 保护。" },
+            p4: { title: "Nostr 协议中继", desc: "用于订单簿和声誉数据的去中心化社交传输层。" },
         },
         features: {
             title: "为什么选择",
