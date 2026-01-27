@@ -4,6 +4,20 @@ import { motion } from "framer-motion";
 import { useLanguage } from "./LanguageContext";
 import Image from "next/image";
 
+// Pre-calculate static data to avoid hydration mismatches
+const FLOATING_NODES = [...Array(6)].map((_, i) => ({
+    x: [0, Math.cos(i) * 150, 0],
+    y: [0, Math.sin(i) * 150, 0],
+    duration: 3 + (i * 0.5) % 2, // Deterministic duration based on index
+    delay: i * 0.5
+}));
+
+const LINE_COORDINATES = [...Array(8)].map((_, i) => ({
+    x2: `${50 + Math.cos(i * 0.78) * 40}%`,
+    y2: `${50 + Math.sin(i * 0.78) * 40}%`,
+    delay: i * 0.2
+}));
+
 export function Vision() {
     const { t } = useLanguage();
 
@@ -73,21 +87,21 @@ export function Vision() {
                     </div>
 
                     {/* Floating Nodes */}
-                    {[...Array(6)].map((_, i) => (
+                    {FLOATING_NODES.map((node, i) => (
                         <motion.div
                             key={i}
                             className="absolute w-4 h-4 rounded-full bg-[var(--color-secondary)] shadow-[0_0_10px_var(--color-secondary)]"
                             animate={{
-                                x: [0, Math.cos(i) * 150, 0],
-                                y: [0, Math.sin(i) * 150, 0],
+                                x: node.x,
+                                y: node.y,
                                 scale: [1, 1.5, 1],
                                 opacity: [0.5, 1, 0.5]
                             }}
                             transition={{
-                                duration: 3 + Math.random() * 2,
+                                duration: node.duration,
                                 repeat: Infinity,
                                 ease: "easeInOut",
-                                delay: i * 0.5
+                                delay: node.delay
                             }}
                             style={{
                                 top: '50%',
@@ -105,19 +119,20 @@ export function Vision() {
                                 <stop offset="100%" stopColor="transparent" />
                             </linearGradient>
                         </defs>
-                        {[...Array(8)].map((_, i) => (
+                        {LINE_COORDINATES.map((line, i) => (
                             <motion.line
                                 key={i}
                                 x1="50%" y1="50%"
-                                x2={`${50 + Math.cos(i * 0.78) * 40}%`}
-                                y2={`${50 + Math.sin(i * 0.78) * 40}%`}
+                                x2={line.x2}
+                                y2={line.y2}
                                 stroke="url(#lineGrad)"
                                 strokeWidth="1"
                                 initial={{ pathLength: 0, opacity: 0 }}
                                 animate={{ pathLength: [0, 1, 0], opacity: [0, 0.5, 0] }}
-                                transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }}
+                                transition={{ duration: 3, repeat: Infinity, delay: line.delay }}
                             />
                         ))}
+
                     </svg>
 
                     <div className="absolute bottom-10 text-center">
