@@ -53,7 +53,7 @@ export function Tokenomics() {
                             <circle cx="50" cy="50" r="40" fill="transparent" stroke="#a855f7" strokeWidth="10" strokeDasharray="5 100" strokeDashoffset="-95" />
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center flex-col">
-                            <span className="text-4xl font-black text-white">$FLSH</span>
+                            <span className="text-4xl font-black text-white">$FLASH</span>
                             <span className="text-sm text-gray-500">ERC-20 / RGB</span>
                         </div>
                     </div>

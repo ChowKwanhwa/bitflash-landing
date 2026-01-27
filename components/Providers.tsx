@@ -26,11 +26,19 @@ const bitcoinChain = defineChain({
     },
 });
 
+import { unisatWallet, bitPocketWallet } from "./CustomWallets";
+
 const config = getDefaultConfig({
     appName: "BitFlash Landing Page",
     projectId: "YOUR_PROJECT_ID", // Non-functional placeholder
     chains: [bitcoinChain, mainnet, polygon, optimism, arbitrum, base],
     ssr: true,
+    wallets: [
+        {
+            groupName: 'Recommended',
+            wallets: [unisatWallet, bitPocketWallet],
+        },
+    ],
 });
 
 const queryClient = new QueryClient();

@@ -54,7 +54,7 @@ export const translations = {
             supply: "2.1 Billion Supply",
             title: "Deflationary",
             titleHighlight: "Tokenomics",
-            desc: "$FLSH is the fuel of the Lightning Prediction Network. Burned with every market creation.",
+            desc: "$FLASH is the fuel of the Lightning Prediction Network. Burned with every market creation.",
             legend: {
                 mining: "Hashrate Mining (40%)",
                 liquidity: "Liquidity Pool (20%)",
@@ -68,7 +68,7 @@ export const translations = {
             p1: { phase: "Q1 2026", title: "Consensus & Foundation", items: ["Whitepaper Release", "BitBoom Launchpad IDO", "Community Cold Start", "Lightning Network Integration"] },
             p2: { phase: "Q2 2026", title: "Hashrate & Network", items: ["Node Verification Mining", "Sentinel Watchtower Deployment", "Initial Oracle Partnerships", "BitScore System Beta"] },
             p3: { phase: "H2 2026", title: "Testnet & MVP", items: ["BitFlash Predict Live (Testnet)", "SportRadar API Integration", "DAO Governance Framework", "Public Beta Testing"] },
-            p4: { phase: "2027", title: "Mainnet Explosion", items: ["Mainnet Launch", "CEX Listings ($FLSH)", "Social Prediction Client (Nostr)", "Global Marketing Campaign"] },
+            p4: { phase: "2027", title: "Mainnet Explosion", items: ["Mainnet Launch", "CEX Listings ($FLASH)", "Social Prediction Client (Nostr)", "Global Marketing Campaign"] },
         },
         footer: {
             desc: "The First Gamified Prediction Market on Bitcoin Lightning Network.",
@@ -128,7 +128,7 @@ export const translations = {
             supply: "21 亿 供应量",
             title: "通缩型",
             titleHighlight: "代币经济",
-            desc: "$FLSH 是闪电预测网络的燃料。每次创建市场都会销毁代币。",
+            desc: "$FLASH 是闪电预测网络的燃料。每次创建市场都会销毁代币。",
             legend: {
                 mining: "算力挖矿 (40%)",
                 liquidity: "流动性底池 (20%)",
@@ -142,7 +142,7 @@ export const translations = {
             p1: { phase: "2026 第一季度", title: "共识与基础", items: ["发布白皮书", "BitBoom Launchpad IDO", "社区冷启动", "闪电网络集成"] },
             p2: { phase: "2026 第二季度", title: "算力与网络", items: ["节点验证挖矿", "哨塔部署", "早期预言机合作", "BitScore 系统 Beta"] },
             p3: { phase: "2026 下半年", title: "测试网与 MVP", items: ["BitFlash 预测市场 (测试网)", "SportRadar API 集成", "DAO 治理框架", "公开 Beta 测试"] },
-            p4: { phase: "2027", title: "主网爆发", items: ["主网发布", "CEX 上市 ($FLSH)", "社交预测客户端 (Nostr)", "全球营销活动"] },
+            p4: { phase: "2027", title: "主网爆发", items: ["主网发布", "CEX 上市 ($FLASH)", "社交预测客户端 (Nostr)", "全球营销活动"] },
         },
         footer: {
             desc: "比特币闪电网络上的首个游戏化预测市场。",
