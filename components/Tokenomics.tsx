@@ -54,7 +54,7 @@ export function Tokenomics() {
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center flex-col">
                             <span className="text-4xl font-black text-white">$FLASH</span>
-                            <span className="text-sm text-gray-500">ERC-20 / RGB</span>
+                            <span className="text-sm text-gray-500">BRC-20 / Taproot</span>
                         </div>
                     </div>
 
