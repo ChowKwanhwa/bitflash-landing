@@ -6,15 +6,15 @@ import Image from "next/image";
 
 // Pre-calculate static data to avoid hydration mismatches
 const FLOATING_NODES = [...Array(6)].map((_, i) => ({
-    x: [0, Math.cos(i) * 150, 0],
-    y: [0, Math.sin(i) * 150, 0],
+    x: [0, parseFloat((Math.cos(i) * 150).toFixed(4)), 0],
+    y: [0, parseFloat((Math.sin(i) * 150).toFixed(4)), 0],
     duration: 3 + (i * 0.5) % 2, // Deterministic duration based on index
     delay: i * 0.5
 }));
 
 const LINE_COORDINATES = [...Array(8)].map((_, i) => ({
-    x2: `${50 + Math.cos(i * 0.78) * 40}%`,
-    y2: `${50 + Math.sin(i * 0.78) * 40}%`,
+    x2: `${(50 + Math.cos(i * 0.78) * 40).toFixed(4)}%`,
+    y2: `${(50 + Math.sin(i * 0.78) * 40).toFixed(4)}%`,
     delay: i * 0.2
 }));
 
