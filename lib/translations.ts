@@ -10,7 +10,8 @@ export const translations = {
             launchApp: "Launch App",
         },
         hero: {
-            tagline: "Powered by BitBoom",
+            taglinePrefix: "Powered by",
+            taglineSuffix: "",
             title1: "Lightning",
             title2: "Strikes",
             subtitle: "The Future of Prediction Markets on",
@@ -71,7 +72,7 @@ export const translations = {
         },
         footer: {
             desc: "The First Gamified Prediction Market on Bitcoin Lightning Network.",
-            poweredBy: "BitFlash Network. Powered by BitBoom.",
+            poweredByPrefix: "BitFlash Network. Powered by",
         }
     },
     zh: {
@@ -83,7 +84,8 @@ export const translations = {
             launchApp: "启动应用",
         },
         hero: {
-            tagline: "由 BitBoom 驱动",
+            taglinePrefix: "由",
+            taglineSuffix: "驱动",
             title1: "闪电",
             title2: "未来",
             subtitle: "构建在比特币二层的",
@@ -144,7 +146,7 @@ export const translations = {
         },
         footer: {
             desc: "比特币闪电网络上的首个游戏化预测市场。",
-            poweredBy: "BitFlash Network. Powered by BitBoom.",
+            poweredByPrefix: "BitFlash Network. Powered by",
         }
     }
 };

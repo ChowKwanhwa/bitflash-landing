@@ -50,7 +50,7 @@ export function Hero() {
                         <div className="relative px-6 py-2 bg-black ring-1 ring-white/10 rounded-lg leading-none flex items-center space-x-2">
                             <Zap className="w-4 h-4 text-[var(--color-primary)]" />
                             <span className="text-gray-300 font-mono text-xs uppercase tracking-widest">
-                                {t.hero.tagline}
+                                {t.hero.taglinePrefix} <a href="https://bitboom.fun" target="_blank" className="hover:text-[var(--color-primary)] hover:underline transition-all">BitBoom</a> {t.hero.taglineSuffix}
                             </span>
                         </div>
                     </div>

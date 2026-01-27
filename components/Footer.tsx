@@ -41,7 +41,7 @@ export function Footer() {
                 </div>
 
                 <div className="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                    <p>© {currentYear} {t.footer.poweredBy}</p>
+                    <p>© {currentYear} {t.footer.poweredByPrefix} <a href="https://bitboom.fun" target="_blank" className="hover:text-[var(--color-primary)] hover:underline transition-all">BitBoom</a>.</p>
                 </div>
             </div>
         </footer>
