@@ -22,7 +22,7 @@ export const translations = {
         vision: {
             title: "Reinventing",
             highlight: "Consensus",
-            description1: "BitFlash is not just a betting platform; it represents the evolution of truth. By leveraging the Bitcoin Lightning Network, we restore the original promise of decentralized consensus—fast, fair, and immutable.",
+            description1: "BitFlash is not just a prediction platform; it represents the evolution of truth. By leveraging the Bitcoin Lightning Network, we restore the original promise of decentralized consensus—fast, fair, and immutable.",
             description2: "We are building a world where information markets are as liquid as water and as fast as light. No gatekeepers, no delays, just pure market efficiency."
         },
         ecosystem: {
@@ -51,24 +51,24 @@ export const translations = {
             f4: { title: "Social Reputation", desc: "Build your 'BitScore' on Nostr. Prove your prediction skills without doxxing your identity." },
         },
         tokenomics: {
-            supply: "21 Billion Supply",
+            supply: "2.1 Billion Supply",
             title: "Deflationary",
             titleHighlight: "Tokenomics",
             desc: "$FLSH is the fuel of the Lightning Prediction Network. Burned with every market creation.",
             legend: {
-                mining: "Hashrate Mining",
-                liquidity: "Liquidity Pool",
-                eco: "Eco Fund",
-                community: "Community",
-                team: "Team",
+                mining: "Hashrate Mining (40%)",
+                liquidity: "Liquidity Pool (20%)",
+                eco: "Ecosystem Fund (20%)",
+                community: "Community (15%)",
+                team: "Team (5%)",
             }
         },
         roadmap: {
             title: "Strategic Roadmap",
-            p1: { phase: "H1 2026", title: "Consensus & Foundation", items: ["Whitepaper Release", "BitBoom Launchpad IDO", "Community Cold Start", "Lightning Network Integration"] },
-            p2: { phase: "H1 2026", title: "Hashrate & Network", items: ["Node Verification Mining", "Sentinel Watchtower Deployment", "Initial Oracle Partnerships", "BitScore System Beta"] },
+            p1: { phase: "Q1 2026", title: "Consensus & Foundation", items: ["Whitepaper Release", "BitBoom Launchpad IDO", "Community Cold Start", "Lightning Network Integration"] },
+            p2: { phase: "Q2 2026", title: "Hashrate & Network", items: ["Node Verification Mining", "Sentinel Watchtower Deployment", "Initial Oracle Partnerships", "BitScore System Beta"] },
             p3: { phase: "H2 2026", title: "Testnet & MVP", items: ["BitFlash Predict Live (Testnet)", "SportRadar API Integration", "DAO Governance Framework", "Public Beta Testing"] },
-            p4: { phase: "H2 2026", title: "Mainnet Explosion", items: ["Mainnet Launch", "CEX Listings ($FLSH)", "Social Betting Client (Nostr)", "Global Marketing Campaign"] },
+            p4: { phase: "2027", title: "Mainnet Explosion", items: ["Mainnet Launch", "CEX Listings ($FLSH)", "Social Prediction Client (Nostr)", "Global Marketing Campaign"] },
         },
         footer: {
             desc: "The First Gamified Prediction Market on Bitcoin Lightning Network.",
@@ -96,7 +96,7 @@ export const translations = {
         vision: {
             title: "重塑",
             highlight: "共识",
-            description1: "BitFlash 不仅仅是一个博彩平台；它是真理的进化。通过利用比特币闪电网络，我们恢复了去中心化共识的最初承诺——快速、公平且不可篡改。",
+            description1: "BitFlash 不仅仅是一个预测平台；它是真理的进化。通过利用比特币闪电网络，我们恢复了去中心化共识的最初承诺——快速、公平且不可篡改。",
             description2: "我们正在构建一个信息市场，它像水一样流动，像光一样快速。没有守门人，没有延迟，只有纯粹的市场效率。"
         },
         ecosystem: {
@@ -125,24 +125,24 @@ export const translations = {
             f4: { title: "社交声誉系统", desc: "在 Nostr 上建立您的 'BitScore'。在不暴露身份的情况下证明您的预测能力。" },
         },
         tokenomics: {
-            supply: "210 亿 供应量",
+            supply: "21 亿 供应量",
             title: "通缩型",
             titleHighlight: "代币经济",
             desc: "$FLSH 是闪电预测网络的燃料。每次创建市场都会销毁代币。",
             legend: {
-                mining: "算力挖矿",
-                liquidity: "流动性底池",
-                eco: "生态基金",
-                community: "社区奖励",
-                team: "开发团队",
+                mining: "算力挖矿 (40%)",
+                liquidity: "流动性底池 (20%)",
+                eco: "生态基金 (20%)",
+                community: "社区奖励 (15%)",
+                team: "开发团队 (5%)",
             }
         },
         roadmap: {
             title: "战略路线图",
-            p1: { phase: "2026 上半年", title: "共识与基础", items: ["发布白皮书", "BitBoom Launchpad IDO", "社区冷启动", "闪电网络集成"] },
-            p2: { phase: "2026 上半年", title: "算力与网络", items: ["节点验证挖矿", "哨塔部署", "早期预言机合作", "BitScore 系统 Beta"] },
+            p1: { phase: "2026 第一季度", title: "共识与基础", items: ["发布白皮书", "BitBoom Launchpad IDO", "社区冷启动", "闪电网络集成"] },
+            p2: { phase: "2026 第二季度", title: "算力与网络", items: ["节点验证挖矿", "哨塔部署", "早期预言机合作", "BitScore 系统 Beta"] },
             p3: { phase: "2026 下半年", title: "测试网与 MVP", items: ["BitFlash 预测市场 (测试网)", "SportRadar API 集成", "DAO 治理框架", "公开 Beta 测试"] },
-            p4: { phase: "2026 下半年", title: "主网爆发", items: ["主网发布", "CEX 上市 ($FLSH)", "社交博彩客户端 (Nostr)", "全球营销活动"] },
+            p4: { phase: "2027", title: "主网爆发", items: ["主网发布", "CEX 上市 ($FLSH)", "社交预测客户端 (Nostr)", "全球营销活动"] },
         },
         footer: {
             desc: "比特币闪电网络上的首个游戏化预测市场。",
