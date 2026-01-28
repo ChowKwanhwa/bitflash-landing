@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitPocket 安装与 BitFlash 购买教程</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .lang-switch:hover {
+            background: #e0e0e0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d32f2f;
+            margin-bottom: 30px;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        h2 {
+            border-left: 5px solid #ff9800;
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .step {
+            margin-bottom: 40px;
+        }
+
+        .step-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            background: #ff9800;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .img-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .link-box {
+            background: #fdf2e9;
+            border: 1px solid #ffe0b2;
+            padding: 15px;
+            border-radius: 8px;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #e65100;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .tip {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .lang-en {
+            display: none;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+
+            /* Avoid page breaks inside steps */
+            .step {
+                page-break-inside: avoid;
+            }
+
+            .lang-switch {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        function toggleLanguage() {
+            const zhElements = document.querySelectorAll('.lang-zh');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.getElementById('langBtn');
+
+            const isZh = btn.innerText.includes('English');
+
+            if (isZh) {
+                // Switch to English
+                zhElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                btn.innerText = '中文';
+                document.documentElement.lang = 'en';
+            } else {
+                // Switch to Chinese
+                zhElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+                btn.innerText = 'English';
+                document.documentElement.lang = 'zh-CN';
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="langBtn" class="lang-switch" onclick="toggleLanguage()">English</button>
+
+        <h1 class="lang-zh">BitFlash 参与教程</h1>
+        <h1 class="lang-en">BitFlash Participation Tutorial</h1>
+
+        <p class="lang-zh" style="text-align: center; color: #666; font-size: 14px;">本教程包含 BitPocket 钱包安装及 BitFlash
+            代币购买流程</p>
+        <p class="lang-en" style="text-align: center; color: #666; font-size: 14px;">This tutorial covers BitPocket
+            wallet installation and BitFlash token purchase process</p>
+
+        <!-- Part 1: Install Wallet -->
+        <h2 class="lang-zh">第一部分：安装 BitPocket 钱包 (移动端)</h2>
+        <h2 class="lang-en">Part 1: Install BitPocket Wallet (Mobile)</h2>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                <span class="lang-zh">下载并安装 App</span>
+                <span class="lang-en">Download and Install App</span>
+            </div>
+            <div class="link-box">
+                <span class="lang-zh">下载地址：</span><span class="lang-en">Download URL:</span><br>
+                <a href="https://www.bitdance.network/bitpocket.html"
+                    target="_blank">https://www.bitdance.network/bitpocket.html</a>
+            </div>
+            <p class="tip lang-zh">苹果手机请下载 TestFlight 版本；安卓手机直接下载 APK 安装包。</p>
+            <p class="tip lang-en">For iPhone, please download TestFlight version; For Android, download APK directly.
+            </p>
+            <div class="img-container">
+                <img src="./截图/下载BitPocket安装包.png" alt="下载BitPocket安装包">
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                <span class="lang-zh">创建新钱包</span>
+                <span class="lang-en">Create New Wallet</span>
+            </div>
+            <p class="lang-zh">打开 App，选择“创建新钱包”。如果您已有助记词，也可以选择“导入钱包”。</p>
+            <p class="lang-en">Open App, select "Create New Wallet". If you already have a seed phrase, you can select
+                "Import Wallet".</p>
+            <div class="img-container">
+                <img src="./截图/创建或导入钱包页面.png" alt="创建或导入钱包页面">
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">3</span>
+                <span class="lang-zh">设置安全密码</span>
+                <span class="lang-en">Set Security Password</span>
+            </div>
+            <p class="lang-zh">设置一个安全的密码，用于日常解锁钱包。</p>
+            <p class="lang-en">Set a secure password for daily wallet unlocking.</p>
+            <div class="img-container">
+                <img src="./截图/设置密码.png" alt="设置密码">
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">4</span>
+                <span class="lang-zh">备份助记词 (重要)</span>
+                <span class="lang-en">Backup Seed Phrase (Important)</span>
+            </div>
+            <p class="lang-zh" style="color: #d32f2f; font-weight: bold;">请务必手抄助记词并妥善保管！不要截图，不要发送给任何人。</p>
+            <p class="lang-en" style="color: #d32f2f; font-weight: bold;">Please write down your seed phrase and keep it
+                safe! Do not screenshot or send to anyone.</p>
+            <div class="img-container">
+                <img src="./截图/备份助记词.png" alt="备份助记词">
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">5</span>
+                <span class="lang-zh">获取充值地址</span>
+                <span class="lang-en">Get Deposit Address</span>
+            </div>
+            <p class="lang-zh">进入钱包主页，点击“收款”按钮，获取您的 Taproot 比特币地址（以 bc1p 开头）。</p>
+            <p class="lang-en">Go to wallet home, click "Receive" button to get your Taproot Bitcoin address (starts
+                with bc1p).</p>
+            <div class="img-container">
+                <img src="./截图/充值地址.png" alt="钱包界面点击收款获得充值地址">
+            </div>
+        </div>
+
+        <!-- Part 2: Buy Token -->
+        <h2 class="lang-zh">第二部分：购买 Bit Flash 代币</h2>
+        <h2 class="lang-en">Part 2: Buy Bit Flash Token</h2>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                <span class="lang-zh">进入 BitBoom 平台</span>
+                <span class="lang-en">Enter BitBoom Platform</span>
+            </div>
+            <p class="lang-zh">打开 BitPocket 钱包，点击底部的“发现”页面。在列表中点击 "BitBoom.fun PRO" 进入平台。</p>
+            <p class="lang-en">Open BitPocket wallet, click "Discovery" tab at the bottom. Click "BitBoom.fun PRO" in
+                the list to enter the platform.</p>
+            <div class="img-container">
+                <img src="./截图/进入BitBoom平台.png" alt="进入 BitBoom 平台">
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                <span class="lang-zh">连接钱包</span>
+                <span class="lang-en">Connect Wallet</span>
+            </div>
+            <p class="lang-zh">点击页面右上角的 "Connect Wallet" 按钮，选择 BitPocket 钱包进行连接。</p>
+            <p class="lang-en">Click "Connect Wallet" button at the top right, select BitPocket wallet to connect.</p>
+            <div class="img-container">
+                <img src="./截图/连接钱包.png" alt="连接钱包">
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">3</span>
+                <span class="lang-zh">选择 Bit Flash 代币</span>
+                <span class="lang-en">Select Bit Flash Token</span>
+            </div>
+            <p class="lang-zh">在列表中找到 Bit Flash 代币，或者直接在搜索框搜索。点击进入交易详情页。</p>
+            <p class="lang-en">Find Bit Flash token in the list, or search directly. Click to enter trading details.</p>
+            <div class="img-container">
+                <img src="./截图/选择Bit Flash代币准备购买.png" alt="选择 Bit Flash 代币">
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">4</span>
+                <span class="lang-zh">购买代币</span>
+                <span class="lang-en">Buy Token</span>
+            </div>
+            <p class="lang-zh">1. 输入您想要购买的金额（SATS单位）。<br>2. 设置滑点（建议 2% 或更高以确保成功）。<br>3. 点击 "Buy Flash" 按钮确认交易。</p>
+            <p class="lang-en">1. Enter the amount you want to buy (in SATS).<br>2. Set slippage (Recommend 2% or higher
+                to ensure success).<br>3. Click "Buy Flash" button to confirm.</p>
+            <div class="img-container">
+                <img src="./截图/购买界面.png" alt="购买界面">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

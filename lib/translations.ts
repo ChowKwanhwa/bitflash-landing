@@ -17,6 +17,8 @@ export const translations = {
             subtitle: "The Future of Prediction Markets on",
             subtitleHighlight: "Bitcoin Layer 2",
             launch: "Launch App",
+            buyOnBitBoom: "Buy on BitBoom (PC)",
+            mobileTutorial: "Mobile Tutorial",
             ecosystem: "Ecosystem",
         },
         vision: {
@@ -91,6 +93,8 @@ export const translations = {
             subtitle: "构建在比特币二层的",
             subtitleHighlight: "下一代预测市场",
             launch: "启动应用",
+            buyOnBitBoom: "在 BitBoom 购买 (PC)",
+            mobileTutorial: "手机端教程",
             ecosystem: "BitBoom 生态",
         },
         vision: {
