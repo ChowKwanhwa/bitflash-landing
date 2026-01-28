@@ -182,8 +182,13 @@
             padding-top: 10px;
         }
 
-        .lang-en {
-            display: none;
+        /* Language Toggle Logic */
+        html[lang="zh-CN"] .lang-en {
+            display: none !important;
+        }
+
+        html[lang="en"] .lang-zh {
+            display: none !important;
         }
 
         @media print {
@@ -252,21 +257,17 @@
     </style>
     <script>
         function toggleLanguage() {
-            const zhElements = document.querySelectorAll('.lang-zh');
-            const enElements = document.querySelectorAll('.lang-en');
             const btn = document.getElementById('langBtn');
-            const isZh = btn.innerText.includes('English');
+            const currentLang = document.documentElement.lang;
 
-            if (isZh) {
-                zhElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
-                btn.innerText = '中文';
+            if (currentLang === 'zh-CN') {
+                // Switch to English
                 document.documentElement.lang = 'en';
+                btn.innerText = '中文';
             } else {
-                zhElements.forEach(el => el.style.display = 'block');
-                enElements.forEach(el => el.style.display = 'none');
-                btn.innerText = 'English';
+                // Switch to Chinese
                 document.documentElement.lang = 'zh-CN';
+                btn.innerText = 'English';
             }
         }
     </script>
