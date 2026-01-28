@@ -53,7 +53,7 @@ export function Header() {
                 <div className="flex items-center gap-4">
                     <button
                         onClick={toggleLanguage}
-                        className="p-2 rounded-full hover:bg-white/10 text-gray-300 hover:text-primary transition-colors"
+                        className="hidden md:block p-2 rounded-full hover:bg-white/10 text-gray-300 hover:text-primary transition-colors"
                         aria-label="Toggle Language"
                     >
                         <Globe className="w-5 h-5" />
