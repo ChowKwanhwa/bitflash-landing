@@ -129,13 +129,15 @@
 
         @media print {
             @page {
-                margin: 1.5cm;
+                margin: 1cm;
+                /* Reduced margin */
             }
 
             body {
                 background: white;
                 padding: 0;
-                font-size: 12pt;
+                font-size: 11pt;
+                /* Slightly smaller font */
                 color: #000;
             }
 
@@ -149,41 +151,48 @@
 
             h1 {
                 margin-bottom: 20px;
-                font-size: 20pt;
+                font-size: 18pt;
                 page-break-after: avoid;
             }
 
             h2 {
-                margin-top: 30px;
-                margin-bottom: 15px;
-                font-size: 16pt;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                font-size: 14pt;
                 page-break-after: avoid;
                 border: none;
                 padding-left: 0;
             }
 
             .step {
-                margin-bottom: 25px;
-                page-break-inside: auto;
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+                /* Keep steps together */
             }
 
             .step-title {
-                font-size: 14pt;
+                font-size: 12pt;
                 page-break-after: avoid;
             }
 
             .img-container {
-                margin: 10px 0;
+                margin: 5px 0;
                 page-break-inside: avoid;
             }
 
             img {
-                max-width: 80% !important;
+                max-width: 60% !important;
+                /* Reduced width */
+                max-height: 500px !important;
+                /* Restrict height to prevent full-page images */
+                width: auto;
                 height: auto;
                 box-shadow: none;
                 border: 1px solid #ccc;
                 display: block;
                 margin: 0 auto;
+                object-fit: contain;
+                /* Ensure aspect ratio is maintained */
             }
 
             a {
@@ -194,11 +203,16 @@
             .link-box {
                 border: 1px solid #eee;
                 background: none;
-                padding: 10px;
+                padding: 5px;
+                font-size: 10pt;
             }
 
             .lang-switch {
                 display: none !important;
+            }
+
+            .tip {
+                font-size: 10pt;
             }
         }
     </style>
