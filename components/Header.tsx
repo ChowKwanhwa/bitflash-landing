@@ -90,7 +90,7 @@ export function Header() {
                                     {(() => {
                                         if (!connected) {
                                             return (
-                                                <button onClick={openConnectModal} className="bg-white text-black px-4 py-2 rounded-full font-bold hover:bg-primary transition-colors">
+                                                <button onClick={openConnectModal} className="bg-white text-black px-3 py-1 text-xs md:px-4 md:py-2 md:text-base rounded-full font-bold hover:bg-primary transition-colors whitespace-nowrap">
                                                     Connect Wallet
                                                 </button>
                                             );
@@ -98,8 +98,8 @@ export function Header() {
 
                                         if (chain.unsupported || chain.id !== 100000001) {
                                             return (
-                                                <button onClick={openChainModal} className="bg-red-500 text-white px-4 py-2 rounded-full font-bold hover:bg-red-600 transition-colors animate-pulse">
-                                                    Switch to Bitcoin Network
+                                                <button onClick={openChainModal} className="bg-red-500 text-white px-3 py-1 text-xs md:px-4 md:py-2 md:text-base rounded-full font-bold hover:bg-red-600 transition-colors animate-pulse whitespace-nowrap">
+                                                    Wrong Network
                                                 </button>
                                             );
                                         }
@@ -109,8 +109,8 @@ export function Header() {
                                         const btcAddress = `bc1q${account.address.slice(2, 6)}...${account.address.slice(-4)}`;
 
                                         return (
-                                            <button onClick={openAccountModal} className="flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full font-bold hover:bg-white/20 transition-colors border border-primary/50">
-                                                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                            <button onClick={openAccountModal} className="flex items-center gap-2 bg-white/10 text-white px-3 py-1 text-xs md:px-4 md:py-2 md:text-base rounded-full font-bold hover:bg-white/20 transition-colors border border-primary/50">
+                                                <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse" />
                                                 {btcAddress}
                                             </button>
                                         );
