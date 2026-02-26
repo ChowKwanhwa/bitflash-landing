@@ -8,7 +8,7 @@ import { Footer } from '../components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "BitFlash | Lightning Prediction Market",
+  title: "Flash | Lightning Prediction Market",
   description: "The First Gamified Prediction Market on Bitcoin Lightning Network. Powered by BitBoom.",
   icons: {
     icon: "/logo.jpg",

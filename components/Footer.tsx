@@ -19,7 +19,7 @@ export function Footer() {
                     {/* Brand */}
                     <div className="flex flex-col items-center md:items-start space-y-4">
                         <span className="text-3xl font-bold italic tracking-tighter text-white">
-                            BIT<span className="text-[var(--color-primary)]">FLASH</span>
+                            FLASH
                         </span>
                         <p className="text-gray-400 text-sm max-w-xs text-center md:text-left">
                             {t.footer.desc}

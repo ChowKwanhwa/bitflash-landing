@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Zap } from "lucide-react";
 import { useRef } from "react";
 import { useLanguage } from "./LanguageContext";
+import Link from "next/link";
 
 export function Hero() {
     const containerRef = useRef(null);
@@ -18,7 +19,7 @@ export function Hero() {
             <motion.div style={{ y }} className="absolute inset-0 z-0">
                 <Image
                     src="/hero.png"
-                    alt="BitFlash Hero Background"
+                    alt="Flash Hero Background"
                     fill
                     priority
                     className="object-cover object-center brightness-[0.3] contrast-125 scale-110"
@@ -105,7 +106,7 @@ export function Hero() {
                     className="flex flex-col md:flex-row justify-center gap-6"
                 >
                     <a
-                        href="https://bitboom.fun/coin/?id=502dd43d5cb14e52202c8861d40ce1118f062e4d155736b9622dcb9599823495"
+                        href="https://bitboom.fun/coin/?id=157e7e3e1577a5fa01015da5bb6e6dad995b65101273470c393f0e4babb48054"
                         target="_blank"
                         className="relative px-8 py-4 bg-[var(--color-primary)] text-black font-black text-lg uppercase tracking-wider rounded-none clip-path-slant hover:bg-yellow-400 transition-colors shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] flex items-center justify-center gap-2 group"
                         style={{ clipPath: "polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%)" }}
@@ -114,14 +115,13 @@ export function Hero() {
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
 
-                    <a
-                        href="/bitpocket_tutorial.html"
-                        target="_blank"
+                    <Link
+                        href="/tutorial"
                         className="relative px-8 py-4 bg-transparent border border-white/20 text-white font-bold text-lg uppercase tracking-wider hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center"
                         style={{ clipPath: "polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%)" }}
                     >
                         {t.hero.mobileTutorial}
-                    </a>
+                    </Link>
                 </motion.div>
             </div>
         </section>

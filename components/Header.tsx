@@ -26,13 +26,13 @@ export function Header() {
                     <div className="relative w-10 h-10 rounded-full border border-primary/40 overflow-hidden group-hover:border-primary transition-all shadow-[0_0_10px_rgba(255,215,0,0.2)]">
                         <Image
                             src="/logo.jpg"
-                            alt="BitFlash Logo"
+                            alt="Flash Logo"
                             fill
                             className="object-cover"
                         />
                     </div>
                     <span className="text-2xl font-bold italic tracking-tighter text-white group-hover:text-primary transition-colors">
-                        BIT<span className="text-primary">FLASH</span>
+                        FLASH
                     </span>
                 </Link>
 

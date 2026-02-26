@@ -55,7 +55,7 @@ export function Technology() {
                             </div>
                             <div className="text-gray-400 space-y-2">
                                 <p><span className="text-purple-400">const</span> <span className="text-yellow-400">contract</span> = <span className="text-blue-400">new</span> <span className="text-green-400">DLC</span>({'{'} </p>
-                                <p className="pl-4">oracle: <span className="text-orange-400">"BitFlash_Node_01"</span>,</p>
+                                <p className="pl-4">oracle: <span className="text-orange-400">"Flash_Node_01"</span>,</p>
                                 <p className="pl-4">asset: <span className="text-orange-400">"BTC_L2"</span>,</p>
                                 <p className="pl-4">outcome: <span className="text-blue-400">await</span> oracle.verify(<span className="text-orange-400">"match_id"</span>)</p>
                                 <p>{'}'});</p>

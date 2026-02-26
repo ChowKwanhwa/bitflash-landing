@@ -37,7 +37,7 @@ import {
 } from '@rainbow-me/rainbowkit/wallets';
 
 const config = getDefaultConfig({
-    appName: "BitFlash Landing Page",
+    appName: "Flash Landing Page",
     projectId: "YOUR_PROJECT_ID", // Non-functional placeholder
     chains: [bitcoinChain, mainnet, polygon, optimism, arbitrum, base],
     ssr: true,
