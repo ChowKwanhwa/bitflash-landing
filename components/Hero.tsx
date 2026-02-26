@@ -103,7 +103,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.8 }}
-                    className="flex flex-col md:flex-row justify-center gap-6"
+                    className="flex flex-col md:flex-row justify-center gap-6 mb-20"
                 >
                     <a
                         href="https://bitboom.fun/coin/?id=157e7e3e1577a5fa01015da5bb6e6dad995b65101273470c393f0e4babb48054"
@@ -122,6 +122,35 @@ export function Hero() {
                     >
                         {t.hero.mobileTutorial}
                     </Link>
+                </motion.div>
+
+                {/* Embedded Trading Chart */}
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, delay: 1 }}
+                    className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] relative z-20 group"
+                >
+                    {/* Glowing border effect */}
+                    <div className="absolute inset-0 border-2 border-[var(--color-primary)]/20 rounded-2xl pointer-events-none group-hover:border-[var(--color-primary)]/50 transition-colors duration-500" />
+
+                    {/* Window Controls UI (Optional, for aesthetics) */}
+                    <div className="h-8 bg-[#1a1a1a] border-b border-white/5 flex items-center px-4 gap-2">
+                        <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                        <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                        <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                        <span className="ml-4 text-xs font-mono text-gray-500 tracking-widest uppercase">Live Market Data</span>
+                    </div>
+
+                    <div className="relative w-full h-[600px] md:h-[800px] bg-[#0a0a0a]">
+                        <iframe
+                            src="https://bitboom.fun/coin/?id=157e7e3e1577a5fa01015da5bb6e6dad995b65101273470c393f0e4babb48054"
+                            className="w-full h-full border-none"
+                            title="Flash Trading Chart"
+                            allow="clipboard-write"
+                            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                        />
+                    </div>
                 </motion.div>
             </div>
         </section>
