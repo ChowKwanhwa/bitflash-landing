@@ -14,7 +14,7 @@ export function Hero() {
     const { t } = useLanguage();
 
     return (
-        <section ref={containerRef} className="relative min-h-[110vh] flex items-center justify-center overflow-hidden">
+        <section ref={containerRef} className="relative min-h-[110vh] flex flex-col items-center justify-start pt-32 lg:pt-40 pb-20 overflow-hidden">
             {/* Dynamic Background */}
             <motion.div style={{ y }} className="absolute inset-0 z-0">
                 <Image
@@ -37,7 +37,7 @@ export function Hero() {
             <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[var(--color-secondary)]/10 blur-[150px] rounded-full animate-pulse-slow delay-75 pointer-events-none" />
 
             {/* Content */}
-            <div className="container mx-auto px-4 z-10 text-center relative mt-[-100px]">
+            <div className="container mx-auto px-4 z-10 text-center relative">
 
                 {/* Powered By Badge */}
                 <motion.div
@@ -142,7 +142,7 @@ export function Hero() {
                         <span className="ml-4 text-xs font-mono text-gray-500 tracking-widest uppercase">Live Market Data</span>
                     </div>
 
-                    <div className="relative w-full h-[600px] md:h-[800px] bg-[#0a0a0a]">
+                    <div className="relative w-full h-[500px] md:h-[700px] bg-[#0a0a0a]">
                         <iframe
                             src="https://bitboom.fun/coin/?id=157e7e3e1577a5fa01015da5bb6e6dad995b65101273470c393f0e4babb48054"
                             className="w-full h-full border-none"
