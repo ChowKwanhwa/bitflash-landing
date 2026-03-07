@@ -59,3 +59,144 @@ body {
 @utility glow-text {
   text-shadow: 0 0 10px currentColor;
 }
+
+/* Print-specific Styles - Optimized for PDF Color Export */
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+
+  /* Force background to stay black for the Cyberpunk look */
+  body,
+  html {
+    background: black !important;
+    color: white !important;
+    height: auto !important;
+    min-height: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  main {
+    background: black !important;
+    color: white !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Aggressive Flattening: Disable all animations and force linear flow */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    position: static !important;
+    /* Flatten most positions */
+  }
+
+  /* Exceptions for relative elements that need structure */
+  .relative,
+  section,
+  .container,
+  main {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Hide all decorative background elements that cause gaps */
+  .absolute,
+  [class*="hero-glow"],
+  [class*="bg-radial"],
+  [class*="blur-"],
+  [class*="animate-pulse"],
+  .no-print {
+    display: none !important;
+  }
+
+  /* Keep images that are important */
+  .relative img,
+  section img,
+  img {
+    display: block !important;
+    position: relative !important;
+    max-width: 100% !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Hero Image specifically */
+  .z-0 img {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0.3 !important;
+    z-index: -1;
+    display: block !important;
+  }
+
+  /* Typography Contrast */
+  p,
+  li,
+  div,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  strong {
+    color: #ffffff !important;
+    text-shadow: none !important;
+  }
+
+  .marvel-gradient {
+    -webkit-text-fill-color: #FFD700 !important;
+    /* Fallback to solid gold for reliability */
+    color: #FFD700 !important;
+  }
+
+  /* Layout Spacing */
+  section {
+    padding: 2rem 0 !important;
+    margin: 0 !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  /* Content Cards */
+  .frosted-glass,
+  .p-8,
+  [class*="PricingTierCard"],
+  [class*="StepCard"] {
+    display: block !important;
+    margin-bottom: 2rem !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+
+  /* Force Grid items to stack if they overflow A4 width */
+  .grid {
+    display: block !important;
+  }
+
+  header,
+  footer,
+  nav {
+    display: none !important;
+    /* Usually unwanted in a clean tutorial PDF */
+  }
+}
