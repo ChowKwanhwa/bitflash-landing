@@ -91,7 +91,7 @@ export function TutorialHero() {
                     </div>
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
                         <Zap className="w-4 h-4 text-[var(--color-primary)]" />
-                        <span className="text-xs font-mono uppercase tracking-widest text-gray-400">Suanneng Protocol Genesis</span>
+                        <span className="text-xs font-mono uppercase tracking-widest text-gray-400"> Protocol Genesis</span>
                     </div>
                 </motion.div>
 
