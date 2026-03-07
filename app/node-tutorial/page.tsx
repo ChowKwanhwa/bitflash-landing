@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { TutorialHero, PricingTierCard, StepFlow, PRICING_TIERS } from "@/components/TutorialComponents";
-import { Shield, CreditCard, Info, MapPin, TrendingUp, Gift } from "lucide-react";
+import { Zap, Shield, TrendingUp, Gift, Download, ExternalLink, ArrowRight, Wallet, CheckCircle2, CreditCard, Info, MapPin } from "lucide-react";
 import Image from "next/image";
 
 export default function NodeTutorial() {
@@ -21,27 +21,39 @@ export default function NodeTutorial() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <h2 className="text-4xl md:text-6xl font-black mb-8 italic italic-glow">
-                                    什么是算能协议节点？ <br />
-                                    <span className="marvel-gradient tracking-tighter uppercase font-black text-transparent bg-clip-text">WHAT IS SUANNENG NODE?</span>
-                                </h2>
-                                <div className="space-y-6 text-gray-400 text-lg font-light leading-relaxed">
-                                    <p>
-                                        算能协议（Suanneng Protocol）是构建于比特币主网之上的算力金融协议，通过 Taproot 与闪电网络，打造比特币的计算资产层。
-                                    </p>
-                                    <ul className="space-y-4">
-                                        {[
-                                            { title: "算力聚合者", desc: "接入并管理分散在全球的算力资源。" },
-                                            { title: "网络验证者", desc: "参与网络共识，确保交易及计算任务的可信执行。" },
-                                            { title: "生态贡献者", desc: "通过提供稳定服务，获得协议层面的算力奖励。" },
-                                        ].map((item, i) => (
-                                            <li key={i} className="flex gap-4">
-                                                <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] mt-3" />
-                                                <div>
-                                                    <strong className="text-white">{item.title}</strong>：{item.desc}
-                                                </div>
-                                            </li>
-                                        ))}
+                                <div className="frosted-glass p-8 border-[var(--color-secondary)]">
+                                    <h3 className="text-2xl font-black mb-6 flex items-center gap-3">
+                                        <Zap className="text-[var(--color-secondary)]" /> 节点权益
+                                    </h3>
+                                    <ul className="space-y-4 text-gray-400">
+                                        <li className="flex items-start gap-3">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-secondary)] mt-2" />
+                                            <div>
+                                                <span className="text-white font-bold block mb-1">先购先得，节点首码排单，共享大集群</span>
+                                                <p className="text-xs">优先申购权与大集群收益分成机制。</p>
+                                            </div>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-secondary)] mt-2" />
+                                            <div>
+                                                <span className="text-white font-bold block mb-1">主网节点 1:1 兑换</span>
+                                                <p className="text-xs">主网上线后，凭借预售凭证可直接申请 1:1 兑换主网节点。</p>
+                                            </div>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-secondary)] mt-2" />
+                                            <div>
+                                                <span className="text-white font-bold block mb-1">2.4 倍算力加成</span>
+                                                <p className="text-xs">享有专属的算力释放倍率，提升挖矿收益空间。</p>
+                                            </div>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-secondary)] mt-2" />
+                                            <div>
+                                                <span className="text-white font-bold block mb-1">社群专属服务</span>
+                                                <p className="text-xs">进入大户群，享有 1 对 1 技术支持与生态空投。如有疑问请联系官方客服或加入 Telegram 群组。</p>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                             </motion.div>

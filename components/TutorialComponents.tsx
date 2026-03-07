@@ -79,20 +79,30 @@ export function TutorialHero() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"
+                    className="flex flex-col items-center mb-8"
                 >
-                    <Zap className="w-4 h-4 text-[var(--color-primary)]" />
-                    <span className="text-xs font-mono uppercase tracking-widest text-gray-400">Suanneng Protocol Genesis</span>
+                    <div className="relative w-24 h-24 mb-6 rounded-2xl overflow-hidden border-2 border-[var(--color-primary)] shadow-[0_0_30px_rgba(255,215,0,0.3)]">
+                        <Image
+                            src="/logo.jpg"
+                            alt="Flash Logo"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                        <Zap className="w-4 h-4 text-[var(--color-primary)]" />
+                        <span className="text-xs font-mono uppercase tracking-widest text-gray-400">Suanneng Protocol Genesis</span>
+                    </div>
                 </motion.div>
 
                 <motion.h1
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="text-5xl md:text-7xl font-black uppercase italic italic-glow mb-6"
+                    className="text-4xl md:text-6xl font-black uppercase italic italic-glow mb-6 max-w-4xl mx-auto leading-tight"
                 >
-                    节点预售教程 <br />
-                    <span className="marvel-gradient">NODE TUTORIAL</span>
+                    【重磅首发】比特币原生生态 <br />
+                    Flash<span className="marvel-gradient">“算能协议”</span>节点预售公告
                 </motion.h1>
 
                 <motion.p
